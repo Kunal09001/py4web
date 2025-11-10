@@ -64,7 +64,7 @@ SQLite      sqlite3 or pysqlite2 or zxJDBC (on Jython)
 PostgreSQL  psycopg2 or zxJDBC (on Jython)
 MySQL       pymysql or MySQLdb
 Oracle      cx_Oracle
-MSSQL       pyodbc or pypyodbc
+MSSQL       pyodbc or pypyodbc or pymssql
 FireBird    kinterbasdb or fdb or pyodbc
 DB2         pyodbc
 Informix    informixdb
@@ -322,6 +322,7 @@ Database              Connection string
 **MSSQL (legacy)**    ``mssql://username:password@localhost/test``
 **MSSQL (>=2005)**    ``mssql3://username:password@localhost/test``
 **MSSQL (>=2012)**    ``mssql4://username:password@localhost/test``
+**MSSQL (pymssql)**   ``pymssql://username:password@localhost/test``
 **FireBird**          ``firebird://username:password@localhost/test``
 **Oracle**            ``oracle://username/password@test``
 **DB2**               ``db2://username:password@test``
@@ -4759,6 +4760,7 @@ following adapters:
    MSSQL2Adapter extends MSSQLAdapter
    MSSQL3Adapter extends MSSQLAdapter
    MSSQL4Adapter extends MSSQLAdapter
+   PymssqlAdapter extends MSSQLAdapter
    FireBirdAdapter extends BaseAdapter
    FireBirdEmbeddedAdapter extends FireBirdAdapter
    InformixAdapter extends BaseAdapter
@@ -4884,6 +4886,8 @@ in the following dictionary also in “dal.py”:
      - pydal.adapters.mssql.MSSQL4N
    * - mssqln
      - pydal.adapters.mssql.MSSQL1N
+   * - pymssql
+     - pydal.adapters.mssq.PyMssql
    * - mysql
      - pydal.adapters.mysql.MySQL
    * - oracle
